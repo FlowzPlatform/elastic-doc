@@ -1,0 +1,134 @@
+https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-parent-field.html
+
+DELETE *
+
+PUT products
+{
+  "mappings": {
+    "product": {},
+    "dist_product": {
+      "_parent": {
+        "type": "product" 
+      }
+    }
+  }
+}
+POST products/product/_bulk
+{ "index": { "_id": "48187" }}
+{ "title": "Playful Plaid Picnic Blanket", "description": "Get cozy outside!", "slug": "playful-plaid-picnic-blanket","product_id" : 48187,"supplier_id" : "87","sku_number" : "BK0101" }
+{ "index": { "_id": "48437" }}
+{ "title": "Toucan Journal Book", "description": "Get cozy outside!", "slug": "toucan-journal-book","product_id" : 48437,"supplier_id" : "87","sku_number" : "MP3555" }
+{ "index": { "_id": "48569" }}
+{ "title": "Drawstring Pouch", "description": "Elegant Black pouch with drawstring", "slug": "toucan-journal-book","product_id" : 48569,"supplier_id" : "87","sku_number" : "POUCH100" }
+{ "index": { "_id": "48570" }}
+{ "title": "Playful Plaid", "description": "Elegant Black pouch with drawstring", "slug": "toucan-journal-book","product_id" : 48570,"supplier_id" : "87","sku_number" : "POUCH101" }
+
+PUT products/dist_product/1?parent=48187 
+{
+  "title":  "Distributor Playful Plaid Picnic Blanket",
+  "slug":   "distributor-playful-plaid-picnic-blanket",
+  "dist_id": "101",
+  "sku_number" : "TK0101"
+}
+PUT products/dist_product/2?parent=48437 
+{
+  "title":  "Distributor Get cozy outside",
+  "dist_id": "101"
+}
+
+PUT products/dist_product/3?parent=48570 
+{
+  "keyword":  ["Playful","Black","pouch","drawstring"],
+  "dist_id": "101"
+}
+
+
+PUT products/product/48437 
+{ "title": "Toucan Journal Book Playful", "description": "Get cozy outside!", "slug": "toucan-journal-book","product_id" : 48437,"supplier_id" : "87","sku_number" : "MP3555" }
+
+GET products/dist_product/_search
+
+GET products/product/_search?pretty
+{
+  "query": {
+    "has_child": {
+      "type":       "dist_product",
+      "score_mode": "max",
+      "query": {
+        "match": {
+          "title": "Distributor Playful Plaid Picnic Blanket"
+        }
+      },
+      "inner_hits" : {} 
+    }
+  }
+}
+
+==================================================================================
+GET products/product/_search?pretty
+{
+  "query": {
+    "has_child": {
+      "type":       "dist_product",
+      "score_mode": "max",
+      "query": {
+        "match": {
+          "title": "Distributor Playful Plaid Picnic Blanket"
+        }
+      },
+      "inner_hits" : {} 
+    }
+  }
+}
+
+
+	GET products/_search
+	{
+	    "query": {
+		"ids" : {
+		    "type" : "product",
+		    "values" : ["48187"]
+		}
+	    }
+	}
+
+============================================================
+GET products/_search
+	{
+	    "query": 
+	    {
+		    "has_parent": 
+		    {
+		        "type": "product",
+            
+              "query": 
+              {
+                	"ids" :
+              		{
+              		    "values" : ["48569"]
+              		}
+              },
+              "inner_hits" : {}
+        }
+	    }
+	}
+
+
+
+==============================================================
+	{
+	  	"query":
+		{
+		    	"has_parent":
+		    	{
+				"type": "product",
+				"query":
+				{
+					"match": 
+					{
+						"sku_number": "BK0101"
+			      		}
+				}
+			}
+	  	}
+	}

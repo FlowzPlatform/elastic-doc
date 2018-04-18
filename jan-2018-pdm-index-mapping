@@ -1,0 +1,1123 @@
+GET /_xpack/security/role
+get pdm1/_search
+POST /_xpack/security/role/read
+    {
+      "indices": [
+	    {
+	      "names": [ "pdm","pdm1","pdm2","categories" ],
+	      "privileges": [ "read" ],
+	      "query" : {
+	      "template" : {
+		  "inline" : {
+		    "match_phrase" : { "vid" : "{{_user.metadata.sid}}"}
+		  }
+		}
+	      }
+	    }
+	  ]
+	}
+    
+POST /_xpack/security/role/read_write
+{
+  "indices": [
+    {
+      "names": [ "pdm","pdm1","pdm2","categories"],
+      "privileges": [ "read","write" ],
+      "query" : {
+           "template" : {
+          "inline" : {
+            "match_phrase" : { "vid" : "{{_user.metadata.sid}}"}
+          }
+        }
+      }
+    }
+  ]
+}
+
+POST /_xpack/security/role/read-all
+{
+  "indices": [
+    {
+      "names": ["pdm1"],
+      "privileges": [ "read" ],
+      "query" : {
+           "template" : {
+          "inline" : {
+              "match_all" : {}
+          }
+        }
+      }
+    }
+  ]
+}
+
+POST /_xpack/security/user/esall
+{
+  "username": "esall",
+  "password" : "123456",
+  "roles" : [ "read-all"],
+  "full_name" : "elastic",
+  "email" : "esall@example.com",
+  "enabled": true
+}
+
+
+DELETE /_xpack/security/user/sweda
+get /_xpack/security/user
+POST /_xpack/security/user/aakron
+    		{
+              "username": "aakron",
+			  "password" : "123456",
+			  "roles" : [ "read_write"],
+			  "full_name" : "aakron",
+			  "email" : "aakron@example.com",
+			  "metadata" : {
+				"id":5,
+				"company":"aakron",
+                 "sid": "sup5-5",
+                 "user_version_history":[
+                        "sup5-1",
+                        "sup5-2",
+                        "sup5-3",
+                        "sup5-4",
+                        "sup5-5"
+                     ]
+			  },
+			  "enabled": true
+			}
+
+
+
+DELETE pdm1
+{
+    "query": {
+        "match_all": {}
+    }
+}
+DELETE /_xpack/security/user/aakron_demo
+get /_xpack/security/user/
+POST pdm1/_search
+POST pdm2/product/_bulk
+    		{ "index": { "_id": "101" }}
+			{ "title": "Playful Plaid Picnic Blanket", "product_id" : 48187,"supplier_id" : "5","sku_number" : "BK0101","vid":["sup5-1","dist10-1"] }
+			{ "index": { "_id": "102" }}
+			{ "title": "Toucan Journal Book", "product_id" : 48437,"supplier_id" : "5","sku_number" : "MP3555" ,"vid":["sup5-1","dist10-1"]}
+
+delete categoryslug
+get categoryslug
+put categoryslug
+{
+     "mappings": {
+        "slugAndHref": {}
+     }
+}
+
+get categories/_search
+
+delete categories
+PUT categories 
+{
+     "mappings": {
+      "preferences": {
+          
+      }
+}
+}
+
+PUT pdm1
+{
+   "settings": {
+      "analysis": {
+         "analyzer": {
+            "autocomplete": {
+               "type": "custom",
+               "tokenizer": "standard",
+               "filter": [
+                  "standard",
+                  "lowercase",
+                  "stop",
+                  "ngram"
+               ]
+            },
+            "search_ngram": {
+               "type": "custom",
+               "tokenizer": "keyword",
+               "filter": [
+                  "standard",
+                  "lowercase",
+                  "stop",
+                  "ngram"
+               ]
+            },
+            "keyword_lowercase_analyzer": {
+               "type": "custom",
+               "filter": [
+                  "lowercase"
+               ],
+               "tokenizer": "keyword"
+            },
+            "analyzer_keyword": {
+               "tokenizer": "keyword",
+               "filter": "lowercase"
+            }
+         },
+         "filter": {
+            "ngram": {
+               "type": "ngram",
+               "min_gram": 2,
+               "max_gram": 15
+            }
+         }
+      }
+   },
+   "mappings": {
+      "product": {
+         "properties": {
+            "status": {
+               "type": "boolean"
+            },
+            "is_vmc": {
+               "type": "boolean"
+            },
+            "categories": {
+               "type": "text",
+               "fields": {
+                  "raw": {
+                     "type": "keyword"
+                  },
+                  "english": {
+                     "type": "text",
+                     "analyzer": "english"
+                  }
+               }
+            },
+            "product_name": {
+               "type": "text",
+               "similarity": "BM25"
+            },
+            "linename": {
+               "type": "string",
+               "fields": {
+                  "raw": {
+                     "type": "keyword"
+                  },
+                  "english": {
+                     "type": "text",
+                     "analyzer": "english"
+                  }
+               }
+            },
+            "attributes": {
+               "properties": {
+                  "colors": {
+                     "type": "text",
+                     "fields": {
+                        "raw": {
+                           "type": "keyword"
+                        },
+                        "english": {
+                           "type": "text",
+                           "analyzer": "english"
+                        }
+                     }
+                  },
+                  "size": {
+                     "type": "text",
+                     "fields": {
+                        "raw": {
+                           "type": "keyword"
+                        }
+                     }
+                  }
+               }
+            },
+            "country": {
+               "type": "text"
+            },
+            "language": {
+               "type": "text"
+            },
+            "currency": {
+               "type": "text"
+            },
+            "description": {
+               "type": "text",
+               "fields": {
+                  "english": {
+                     "type": "text",
+                     "analyzer": "english"
+                  }
+               }
+            },
+            "default_image": {
+               "type": "text"
+            },
+            "default_image_color_code": {
+               "type": "text"
+            },
+            "default_color": {
+               "type": "text"
+            },
+            "price": {
+               "type": "double"
+            },
+            "matrix_price": {
+               "type": "double"
+            },
+            "matrix_frieght": {
+               "type": "double"
+            },
+            "packaging_charges": {
+               "type": "double"
+            },
+            "vat": {
+               "type": "double"
+            },
+            "vat_unit": {
+               "type": "text"
+            },
+            "search_keyword": {
+               "type": "string",
+               "fields": {
+                  "raw": {
+                     "type": "string",
+                     "analyzer": "keyword_lowercase_analyzer"
+                  },
+                  "english": {
+                     "type": "text",
+                     "analyzer": "english"
+                  }
+               }
+            },
+            "sku": {
+               "type": "string",
+               "fields": {
+                  "raw": {
+                     "type": "string",
+                     "analyzer": "keyword_lowercase_analyzer"
+                  },
+                  "english": {
+                     "type": "text",
+                     "analyzer": "english"
+                  }
+               }
+            },
+            "valid_up_to": {
+               "type": "date"
+            },
+            "special_price_valid_up_to": {
+               "type": "date"
+            },
+            "distributor_central_url": {
+               "type": "text"
+            },
+            "imprint_data": {
+               "type": "nested",
+               "properties": {
+                  "imprint_method": {
+                     "type": "text"
+                  },
+                  "imprint_position": {
+                     "type": "text"
+                  },
+                  "imprint_area": {
+                     "type": "text"
+                  },
+                  "matrix": {
+                     "type": "text"
+                  },
+                  "max_imprint_color_allowed": {
+                     "type": "integer"
+                  },
+                  "price_included": {
+                     "type": "integer"
+                  },
+                  "max_location_allowed": {
+                     "type": "integer"
+                  },
+                  "location_price_included": {
+                     "type": "integer"
+                  },
+                  "full_color": {
+                     "type": "text"
+                  },
+                  "production_days": {
+                     "type": "text"
+                  },
+                  "production_unit": {
+                     "type": "text"
+                  },
+                  "setup_charge": {
+                     "type": "string"
+                  },
+                  "additional_location_charge": {
+                     "type": "string"
+                  },
+                  "additional_color_charge": {
+                     "type": "string"
+                  },
+                  "rush_charge": {
+                     "type": "string"
+                  },
+                  "ltm_charge": {
+                     "type": "string"
+                  },
+                  "pms_charge": {
+                     "type": "string"
+                  },
+                  "price_range": {
+                     "type": "nested",
+                     "properties": {
+                        "qty": {
+                           "type": "long_range"
+                        },
+                        "price": {
+                           "type": "double"
+                        }
+                     }
+                  }
+               }
+            },
+            "additional_charge": {
+               "type": "nested",
+               "properties": {
+                  "charge_name": {
+                     "type": "text"
+                  },
+                  "option_name": {
+                     "type": "text"
+                  },
+                  "moq": {
+                     "type": "text"
+                  },
+                  "price_range": {
+                     "type": "nested",
+                     "properties": {
+                        "qty": {
+                           "type": "integer_range"
+                        },
+                        "price": {
+                           "type": "double"
+                        },
+                        "net_price": {
+                           "type": "double"
+                        }
+                     }
+                  }
+               }
+            },
+            "images": {
+               "properties": {
+                  "color": {
+                     "type": "text"
+                  },
+                  "web_image": {
+                     "type": "text"
+                  }
+               }
+            },
+            "shipping": {
+               "properties": {
+                  "fob_city": {
+                     "type": "text"
+                  },
+                  "fob_state_code": {
+                     "type": "text"
+                  },
+                  "fob_country_code": {
+                     "type": "text"
+                  },
+                  "fob_zip_code": {
+                     "type": "text"
+                  },
+                  "shipping_qty_per_carton": {
+                     "type": "double"
+                  },
+                  "carton_length": {
+                     "type": "double"
+                  },
+                  "carton_width": {
+                     "type": "string"
+                  },
+                  "carton_height": {
+                     "type": "string"
+                  },
+                  "carton_weight": {
+                     "type": "string"
+                  },
+                  "product_length": {
+                     "type": "string"
+                  },
+                  "product_width": {
+                     "type": "string"
+                  },
+                  "product_height": {
+                     "type": "string"
+                  },
+                  "product_weight": {
+                     "type": "string"
+                  },
+                  "carton_size_unit": {
+                     "type": "string"
+                  },
+                  "carton_weight_unit": {
+                     "type": "string"
+                  },
+                  "product_size_unit": {
+                     "type": "string"
+                  },
+                  "product_weight_unit": {
+                     "type": "string"
+                  }
+               }
+            },
+            "supplier_id": {
+               "type": "string"
+            },
+            "video_url": {
+               "type": "text"
+            },
+            "vid": {
+               "type": "text",
+               "fields": {
+                  "raw": {
+                     "type": "keyword"
+                  }
+               }
+            },
+            "features": {
+               "properties": {
+                  "label": {
+                     "type": "text"
+                  },
+                  "value": {
+                     "type": "text",
+                     "fields": {
+                        "english": {
+                           "type": "text",
+                           "analyzer": "english"
+                        }
+                     }
+                  }
+               }
+            },
+            "pricing": {
+               "properties": {
+                  "type": {
+                     "type": "text",
+                     "fields": {
+                        "raw": {
+                           "type": "keyword"
+                        },
+                        "english": {
+                           "type": "text",
+                           "analyzer": "english"
+                        }
+                     }
+                  },
+                  "global_price_type": {
+                     "type": "text",
+                     "fields": {
+                        "raw": {
+                           "type": "keyword"
+                        },
+                        "english": {
+                           "type": "text",
+                           "analyzer": "english"
+                        }
+                     }
+                  },
+                  "price_unit": {
+                     "type": "text",
+                     "fields": {
+                        "raw": {
+                           "type": "keyword"
+                        },
+                        "english": {
+                           "type": "text",
+                           "analyzer": "english"
+                        }
+                     }
+                  },
+                  "price_range": {
+                     "type": "nested",
+                     "properties": {
+                        "qty": {
+                           "type": "integer_range"
+                        },
+                        "price": {
+                           "type": "double"
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+GET pdm1/_mapping/product
+PUT pdm1/_mapping/product
+{
+  "properties": {
+    "sku": {
+          "type": "string",
+          "fielddata": true,
+          "fields": {
+            "raw": {
+              "type": "string",
+              "analyzer": "keyword_lowercase_analyzer"
+            },
+            "english": {
+              "type":     "text",
+              "analyzer": "english"
+            }
+          }
+        },
+
+     "price_1": {
+                  "type": "text","fielddata": true,
+                  "fields": {
+                     "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                     }
+                  }
+               },
+         "categories": {
+                  "type": "text",
+                   "fielddata": true,
+                  "fields": {
+                     "english": {
+                        "type": "text",
+                        "analyzer": "english"
+                     },
+                     "raw": {
+                        "type": "keyword"
+                     }
+                  }
+               },
+        "pricing": {
+                  "properties": {
+                     "_id": {
+                        "type": "text",
+                        "fields": {
+                           "keyword": {
+                              "type": "keyword",
+                              "ignore_above": 256
+                           }
+                        }
+                     },
+                     "currency": {
+                        "type": "text",
+                        "fields": {
+                           "keyword": {
+                              "type": "keyword",
+                              "ignore_above": 256
+                           }
+                        }
+                     },
+                     "global_price_type": {
+                        "type": "text",
+                        "fields": {
+                           "english": {
+                              "type": "text",
+                              "analyzer": "english"
+                           },
+                           "raw": {
+                              "type": "keyword"
+                           }
+                        }
+                     },
+                     "price_range": {
+                        "type": "nested",
+                        "properties": {
+                           "code": {
+                              "type": "text",
+                              "fields": {
+                                 "keyword": {
+                                    "type": "keyword",
+                                    "ignore_above": 256
+                                 }
+                              }
+                           },
+                           "price": {
+                              "type": "double"
+                           },
+                           "qty": {
+                              "type": "integer_range"
+                           }
+                        }
+                     },
+                     "price_type": {
+                        "type": "text",
+                        "fields": {
+                           "keyword": {
+                              "type": "keyword",
+                              "ignore_above": 256
+                           }
+                        }
+                     },
+                     "price_unit": {
+                        "type": "text",
+                        "fields": {
+                           "english": {
+                              "type": "text",
+                              "analyzer": "english"
+                           },
+                           "raw": {
+                              "type": "keyword"
+                           }
+                        }
+                     },
+                     "product_id": {
+                        "type": "text",
+                        "fields": {
+                           "keyword": {
+                              "type": "keyword",
+                              "ignore_above": 256
+                           }
+                        }
+                     },
+                     "sku": {
+                        "type": "text",
+                        "fields": {
+                           "keyword": {
+                              "type": "keyword",
+                              "ignore_above": 256
+                           }
+                        }
+                     },
+                     "type": {
+                        "type": "text",
+                        "fields": {
+                           "english": {
+                              "type": "text",
+                              "analyzer": "english"
+                           },
+                           "raw": {
+                              "type": "keyword"
+                           }
+                        }
+                     }
+                  }
+               }
+               
+  }
+}
+
+
+GET pdm2/_mapping
+GET /_cluster/stats?human&pretty
+
+GET pdm1/_search
+{
+    "size": 100,"from": 0,  
+    "_source":["sku","product_name","attributes.colors","search_keyword","images"],    
+    "query": {
+        "bool": {
+            "must": [
+                {
+                    "multi_match" : {
+                        "query":      "carolina blue coffee mug",
+                        "type":       "most_fields",
+                        "fields":     ["product_name^5","search_keyword^3"],
+                        "tie_breaker": 0.01,
+                        "boost":2.9,
+                        "minimum_should_match": "30%"
+                    }
+               }
+            ]
+        }
+    }
+}
+
+
+==================Functional Score ===================
+GET pdm1/_search
+{
+    "size": 100,"from": 0,  
+    "_source":["sku","product_name","attributes.colors","search_keyword","images"],
+    "query": {
+        "function_score": {
+          "query": { "match": {
+                "search_keyword":{
+                            "query": "Lime green coffee mug",
+                            "operator": "or"
+                          }
+          } },
+          "boost": "5", 
+          "functions": [
+              {
+                  "filter": { 
+                    "bool": {
+                    "must": [
+                            {
+                                "match" : {
+                                    "search_keyword":{
+                                        "query": "Lime green Coffee Mug",
+                                        "minimum_should_match":"60%"
+                                      }
+                                }
+                            },
+                            {
+                                "multi_match" : {
+                                    "query":      "Lime green coffee mug",
+                                    "type":       "best_fields",
+                                    "fields":     ["images.color_*^5","attributes.colors^5"],
+                                    "tie_breaker": 0.7,
+                                    "boost":2.9
+                                }
+                           }
+                        ]
+                    }         
+                },
+                  "random_score": {}, 
+                  "weight": 50
+              },
+              {
+                  "filter": { "match": { "product_name": {
+                            "query": "Lime green coffee mug",
+                                    "minimum_should_match":"70%"
+                          } } },
+                  "weight": 30
+              }
+          ],
+          "max_boost": 42,
+          "score_mode": "max",
+          "boost_mode": "multiply",
+          "min_score" : 42
+        }
+    }
+}
+
+
+[2]======================================
+GET pdm1/_search
+{
+  "query": {
+    "function_score": { 
+      "query": { 
+        "multi_match": {
+          "query":    "Lime green Coffee Mug",
+          "fields": [ "search_keyword", "product_name" ]
+        }
+      },
+      "field_value_factor": { 
+        "field": "search_keyword" 
+      }
+    }
+  }
+}
+
+
+
+                
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+GET pdm1/_search
+{
+    "size": 100,"from": 0,  
+    "_source":["sku","product_name","attributes.colors","search_keyword","images"],    
+    "query": {
+        "bool": {
+            "must": [
+                {
+                  "bool": {
+                    "should": [
+                        {
+                            "bool": {
+                                "must": [
+                                   {
+                                       "multi_match" : {
+                                            "query":      "Carolina Coffee Mug",
+                                            "type":       "best_fields",
+                                            "fields":     ["search_keyword","product_name^10"],
+                                            "tie_breaker": 0.9,
+                                            "operator":"or"
+                                ,"boost":3.5,
+                                "minimum_should_match": "70%"
+                                        }
+                                   },
+                                   {
+                                       "multi_match" : {
+                                            "query":      "Carolina Coffee Mug",
+                                            "type":       "best_fields",
+                                            "fields":     ["images.color_*^9","attributes.colors^9"],
+                                            "tie_breaker": 0.7
+                                        }
+                                   }
+                                ]
+                            }
+                        },
+                        {
+                           "multi_match" : {
+                                "query":      "Carolina Coffee Mug",
+                                "type":       "best_fields",
+                                "fields":     ["product_name^9"],
+                                "tie_breaker": 0.9,
+                                "operator":"or"
+                                ,"boost":3.5,
+                                "minimum_should_match": "70%"
+                            }
+                        },
+                        {
+                           "multi_match" : {
+                                "query":      "Carolina Coffee Mug",
+                                "type":       "cross_fields",
+                                "fields":     ["search_keyword","product_name^8"],
+                                "tie_breaker": 0.7,
+                                "operator":"or"
+                                ,"boost":1.5,
+                                "minimum_should_match": "2<25%"
+                            }
+                        }
+                    ]
+                  }  
+                }
+            ]
+        }
+    }
+}
+----------------------------------------------------------------------
+GET pdm1/_search
+{
+    "explain": true, 
+    "size": 100,"from": 0,  
+    "_source":["sku","product_name","attributes.colors","search_keyword","images"],    
+    "query": {
+        "bool": {
+            "must": [
+                {
+                  "bool": {
+                    "should": [
+                        
+                        {
+                           "multi_match" : {
+                                "query":      "blue Coffee Mug",
+                                "type":       "cross_fields",
+                                "fields":     ["search_keyword^7","product_name^8"],
+                                "tie_breaker": 0.7,
+                                "operator":"or"
+                                ,"boost":1.5,
+                                "minimum_should_match": "2<30% 3<-2"
+                            }
+                        }
+                    ]
+                  }  
+                }
+            ]
+        }
+    }
+}
+
+
+
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+GET pdm1/_search
+{
+    "size": 100,"from": 0,  
+    "_source":["sku","product_name","attributes.colors","search_keyword","images"],
+    "query": {
+        "common": {
+            "search_keyword": {
+                "query": "blue Coffee Mug",
+                "minimum_should_match": {
+                    "low_freq" : 1,
+                    "high_freq" : 1
+                }
+            }
+        }
+    }
+}
+
+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+GET pdm1/_search
+{
+  "size": 100,"from": 0,  
+    "_source":["sku","product_name","attributes.colors","search_keyword","images"],
+  "query": {
+    "bool": {
+      "must": {
+        "match": { 
+          "search_keyword": {
+            "query":"blue Coffee Mug",
+            "minimum_should_match": "30%"
+          }
+        }
+      },
+      "should": [{
+       "match_phrase": { 
+          "product_name": {
+            "query":"blue Coffee Mug",
+            "slop":  50,
+            "boost": 3
+          }
+        }},
+        {
+        "match_phrase": { 
+          "search_keyword": {
+            "query":"blue Coffee Mug",
+            "slop":  50,
+            "boost": 2
+          }
+        } 
+      }
+      ]
+    }
+  }
+}
+
+
+
+
+GET pdm1/_search
+{
+  "size": 100,"from": 0,  
+    "_source":["sku","product_name","attributes.colors","search_keyword","images"],
+  "query": {
+    "bool": {
+      "must": {
+        "match": { 
+          "product_name": {
+            "query": "Lime green Coffee Mug",
+            "minimum_should_match": "30%"
+          }
+        }
+      },
+      "should": [
+        {
+            "bool": {
+                "must": [
+                   {
+                       "multi_match": {
+                        "query":"Lime green Coffee Mug",
+                        "type": "cross_fields",
+                        "fields": ["product_name^5","search_keyword"],
+                        "boost":"3",
+                        "tie_breaker": 0.1,
+                        "minimum_should_match": "2<70%"
+                      }
+                   },
+                   {
+                    "multi_match": {
+                       "query": "Lime green Coffee Mug",
+                       "fields": ["attributes.colors^3","images.color_*^2"],
+                        "boost":"3",
+                        "tie_breaker": 0.1
+                    }
+                   }
+                ]
+            }
+        },
+        {
+            "match": { 
+              "product_name": {
+                "query":"Lime green Coffee Mug",
+                "boost": 2,
+                "minimum_should_match": "2<70%"
+              }
+            } 
+        }
+      ]
+    }
+  }
+}
+
+
+
+
+GET pdm1/_search
+{
+    "size": 100,"from": 0,  
+    "_source":["sku","product_name","attributes.colors","search_keyword","images"],
+    "query": {
+        "bool": {
+                "must": [
+                   {
+                       "multi_match": {
+                        "query":"blue Coffee Mug",
+                        "type": "cross_fields",
+                        "fields": ["product_name^5","search_keyword"],
+                        "boost":"3",
+                        "tie_breaker": 0.1,
+                        "minimum_should_match": "2<70%"
+                      }
+                   },
+                   {
+                    "multi_match": {
+                       "query": "blue Coffee Mug",
+                       "fields": ["attributes.colors^3","images.color_*^2"],
+                        "boost":"3",
+                        "tie_breaker": 0.1
+                    }
+                   }
+                ]
+            }
+    }
+}
+
+
+DELETE pdm1
+{
+    "query": {
+        "match_all": {}
+    }
+}
+
+
+GET pdm1/_search
+{
+  "size": 100,"from": 0,  
+    "_source":["sku","product_name","attributes.colors","search_keyword","images"],
+  "query": {
+    "bool": {
+      "must": {
+        "match": { 
+          "search_keyword": {
+            "query": "lime green Coffee Mug",
+            "minimum_should_match": "30%"
+          }
+        }
+      },
+      "should": [
+        {
+            "bool": {
+                "must": [
+                   {
+                       "multi_match": {
+                        "query":"lime green Coffee Mug",
+                        "type": "best_fields",
+                        "fields": ["product_name^5","search_keyword"],
+                        "boost":"3",
+                        "tie_breaker": 0.1,
+                        "minimum_should_match": "2<70%"
+                      }
+                   },
+                   {
+                    "multi_match": {
+                       "query": "lime green Coffee Mug",
+                       "fields": ["attributes.colors^3","images.color_*^2"],
+                        "boost":"3",
+                        "tie_breaker": 0.1
+                    }
+                   }
+                ]
+            }
+        },
+        {
+            "match": { 
+              "product_name": {
+                "query":"lime green Coffee Mug",
+                "boost": 5,
+                "minimum_should_match": "2<70%"
+              }
+            } 
+        }
+      ]
+    }
+  }
+}
+

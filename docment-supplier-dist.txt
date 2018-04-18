@@ -1,0 +1,1048 @@
+         {
+            "index":{ 
+		    "_type": "product",
+		    "_id": "b6af49c0-0500-11e8-bc32-29a84e6ebccd"
+	    }
+         },
+	 {
+               "product_id": "48894",
+               "sku": "DH0103",
+               "country": "US",
+               "available_currencies": [
+                  "USD",
+                  "CAD",
+                  "AUD"
+               ],
+               "available_regions": [
+                  "US",
+                  "AU"
+               ],
+               "nonavailable_regions": "CA",
+               "price_1": 0.54,
+               "default_color": "Mixed",
+               "attr_imprint_color": "",
+               "attr_shape": "",
+               "attr_decimal": "",
+               "language": "en",
+               "currency": "USD",
+               "product_name": "Zip-It Document Holder",
+               "description": "<p class=\"MsoNormal\"><span style=\"font-size: 8.5pt; line-height: 107%; font-family: Verdana, sans-serif; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\">Translucent PP top-zip document holder. Features 1-1/4&rdquo; gusset, full-front external pocket, and business card-sized pocket on back pocket.</span></p>",
+               "linename": "Sweda",
+               "categories": [
+                  "Document Holders"
+               ],
+               "search_keyword": [
+                  "DH0103",
+                  "ZIP-IT TRAVEL POCKET PORTFOLIO",
+                  "STATIONERY",
+                  "OFFICE"
+               ],
+               "default_image": "87/DH0103-all-1000x.jpg",
+               "default_image_color_code": "",
+               "valid_up_to": "2025-12-31",
+               "matrix_price": "",
+               "matrix_frieght": "",
+               "vat": "",
+               "vat_unit": "",
+               "packaging_type": "INDIVIDUAL POLY BAG",
+               "packaging_charges": "0",
+               "packaging_code": "o",
+               "video_url": "",
+               "distributor_central_url": "",
+               "special_price_valid_up_to": "1999-11-30",
+               "private": "",
+               "supplier": "",
+               "company": "",
+               "username": "sweda@flowz.com",
+               "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+               "min_price": 2.99,
+               "max_price": 1.99,
+               "pricing": [
+                  {
+                     "_id": "487fb260-04ff-11e8-8c2a-2b3e49001dac",
+                     "product_id": "48894",
+                     "sku": "DH0103",
+                     "price_type": "regular",
+                     "type": "decorative",
+                     "global_price_type": "global",
+                     "currency": "USD",
+                     "price_unit": "inche",
+                     "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+                     "price_range": [
+                        {
+                           "qty": {
+                              "gte": 250,
+                              "lte": 999
+                           },
+                           "price": 2.99,
+                           "code": "R"
+                        },
+                        {
+                           "qty": {
+                              "gte": 1000,
+                              "lte": 2499
+                           },
+                           "price": 2.79,
+                           "code": "R"
+                        },
+                        {
+                           "qty": {
+                              "gte": 2500,
+                              "lte": 9999
+                           },
+                           "price": 2.49,
+                           "code": "R"
+                        },
+                        {
+                           "qty": {
+                              "gte": 10000
+                           },
+                           "price": 1.99,
+                           "code": "R"
+                        }
+                     ]
+                  }
+               ],
+               "imprint_data": [
+                  {
+                     "_id": "653e3f70-04ff-11e8-8c2a-2b3e49001dac",
+                     "product_id": "48894",
+                     "sku": "DH0103",
+                     "imprint_position": "Standard",
+                     "imprint_area": "5” W × 4” H",
+                     "matrix": "",
+                     "max_imprint_color_allowed": 4,
+                     "price_included": 1,
+                     "max_location_allowed": 3,
+                     "location_price_included": 1,
+                     "full_color": "0",
+                     "production_days": "3-5",
+                     "production_unit": "days",
+                     "setup_charge": "50.000(V)",
+                     "additional_location_charge": "",
+                     "additional_color_charge": "",
+                     "rush_charge": "",
+                     "ltm_charge": "75.000(V)",
+                     "pms_charge": "",
+                     "type_of_charge": "",
+                     "imprint_method": "Screen Print",
+                     "is_pms_color_allow": "0",
+                     "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+                     "imprint_data_range": []
+                  }
+               ],
+               "images": [
+                  {
+                     "_id": "acedfe50-04ff-11e8-8c2a-2b3e49001dac",
+                     "product_id": "48894",
+                     "sku": "DH0103",
+                     "Web_image_3": "",
+                     "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+                     "images": [
+                        {
+                           "web_image": "DH0103-front-BL-1000x.jpg",
+                           "color": "Blue",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "DH0103-front-CL-1000x.jpg",
+                           "color": "Clear",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "DH0103-front-GNLM-1000x.jpg",
+                           "color": "Lime green",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "DH0103-front-OR-1000x.jpg",
+                           "color": "Orange",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "DH0103-front-RD-1000x.jpg",
+                           "color": "Red",
+                           "image_color_code": ""
+                        }
+                     ]
+                  }
+               ],
+               "shipping": [
+                  {
+                     "_id": "c0c6b660-04ff-11e8-8c2a-2b3e49001dac",
+                     "product_id": "",
+                     "sku": "DH0103",
+                     "free_on_board": "CA 91744 US",
+                     "fob_city": "La Puente",
+                     "fob_state_code": "CA",
+                     "fob_country_code": "US",
+                     "fob_zip_code": "91744",
+                     "shipping_qty_per_carton": 200,
+                     "carton_length": 20,
+                     "carton_width": "12",
+                     "carton_height": "14",
+                     "carton_weight": "24",
+                     "product_length": "",
+                     "product_width": "13",
+                     "product_height": "9-11/16",
+                     "product_weight": "0.16",
+                     "carton_size_unit": "inches",
+                     "carton_weight_unit": "LBS",
+                     "product_size_unit": "inches",
+                     "product_weight_unit": "LBS",
+                     "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+                     "shipping_range": []
+                  }
+               ],
+               "non-available_regions": [],
+               "attributes": {
+                  "colors": [
+                     "Mixed",
+                     "Blue",
+                     "Clear",
+                     "Green",
+                     "Lime green",
+                     "Orange",
+                     "Red"
+                  ]
+               },
+               "features": [
+                  {
+                     "key": "Primary Imprint",
+                     "value": "Screen Print"
+                  },
+                  {
+                     "key": "Product Size",
+                     "value": "13” W × 9-11/16\" H"
+                  }
+               ],
+               "activeSummary": "Mixed,Blue,Clear,Green,Lime green,Orange,Red,Primary Imprint,Screen Print,Product Size,13” W × 9-11/16\" H",
+               "supplier_id": "5a5f234639cd270013d24c2b",
+               "supplier_info": {
+                  "company": "",
+                  "username": "5a5f234639cd270013d24c2b",
+                  "email": "sweda@flowz.com"
+               },
+               "vid": [
+                  "sup5a5f234639cd270013d24c2b-1"
+               ]
+            },	
+
+         {
+            "index": {
+		    "_type": "product",
+		    "_id": "b7b2d710-0500-11e8-bc32-29a84e6ebccd",
+            }
+         },
+	 {
+               "product_id": "48891",
+               "sku": "PB1572",
+               "country": "US",
+               "available_currencies": [
+                  "USD",
+                  "CAD",
+                  "AUD"
+               ],
+               "available_regions": [
+                  "US",
+                  "AU"
+               ],
+               "nonavailable_regions": "CA",
+               "price_1": 0.365,
+               "default_color": "Mixed",
+               "attr_imprint_color": "",
+               "attr_shape": "",
+               "attr_decimal": "",
+               "language": "en",
+               "currency": "USD",
+               "product_name": "Translucent Curvaceous Ballpoint",
+               "description": "<p>Translucent color curvaceous barrel; shiny silver accents and matching bold color rubberized comfort grip. Metallic silver finish. Comes with black ink. *silver pen has no rubberized grip.</p>",
+               "linename": "Sweda",
+               "categories": [
+                  "Plastic Writing Instruments"
+               ],
+               "search_keyword": [
+                  "PB1572",
+                  "TRANSLUCENT CURVACEOUS BALLPOINT",
+                  "WRITING INSTRUMENTS",
+                  "PLASTIC"
+               ],
+               "default_image": "87/pb1572-mixed.jpg",
+               "default_image_color_code": "",
+               "valid_up_to": "2025-12-31",
+               "matrix_price": "",
+               "matrix_frieght": "",
+               "vat": "",
+               "vat_unit": "",
+               "packaging_type": "",
+               "packaging_charges": "",
+               "packaging_code": "",
+               "video_url": "",
+               "distributor_central_url": "",
+               "special_price_valid_up_to": "1999-11-30",
+               "private": "",
+               "supplier": "",
+               "company": "",
+               "username": "sweda@flowz.com",
+               "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+               "min_price": 0.89,
+               "max_price": 0.49,
+               "pricing": [
+                  {
+                     "_id": "48800080-04ff-11e8-8c2a-2b3e49001dac",
+                     "product_id": "48891",
+                     "sku": "PB1572",
+                     "price_type": "regular",
+                     "type": "decorative",
+                     "global_price_type": "global",
+                     "currency": "USD",
+                     "price_unit": "inche",
+                     "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+                     "price_range": [
+                        {
+                           "qty": {
+                              "gte": 500,
+                              "lte": 2499
+                           },
+                           "price": 0.89,
+                           "code": "R"
+                        },
+                        {
+                           "qty": {
+                              "gte": 2500,
+                              "lte": 4999
+                           },
+                           "price": 0.69,
+                           "code": "R"
+                        },
+                        {
+                           "qty": {
+                              "gte": 5000,
+                              "lte": 9999
+                           },
+                           "price": 0.59,
+                           "code": "R"
+                        },
+                        {
+                           "qty": {
+                              "gte": 10000
+                           },
+                           "price": 0.49,
+                           "code": "R"
+                        }
+                     ]
+                  }
+               ],
+               "imprint_data": [
+                  {
+                     "_id": "653f02c0-04ff-11e8-8c2a-2b3e49001dac",
+                     "product_id": "48891",
+                     "sku": "PB1572",
+                     "imprint_position": "Standard",
+                     "imprint_area": "3/8\" H x 1-1/4\" W",
+                     "matrix": "",
+                     "max_imprint_color_allowed": 0,
+                     "price_included": 0,
+                     "max_location_allowed": 1,
+                     "location_price_included": 1,
+                     "full_color": "1",
+                     "production_days": "3-5",
+                     "production_unit": "days",
+                     "setup_charge": "50.000(V)",
+                     "additional_location_charge": "",
+                     "additional_color_charge": "",
+                     "rush_charge": "",
+                     "ltm_charge": "75.000(V)",
+                     "pms_charge": "",
+                     "type_of_charge": "",
+                     "imprint_method": "Screen Print",
+                     "is_pms_color_allow": "0",
+                     "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+                     "imprint_data_range": []
+                  },
+                  {
+                     "_id": "653f9f00-04ff-11e8-8c2a-2b3e49001dac",
+                     "product_id": "48891",
+                     "sku": "PB1572",
+                     "imprint_position": "Standard",
+                     "imprint_area": "3/8\" H x 1-1/4\" W",
+                     "matrix": "",
+                     "max_imprint_color_allowed": 0,
+                     "price_included": 0,
+                     "max_location_allowed": 1,
+                     "location_price_included": 1,
+                     "full_color": "1",
+                     "production_days": "3-5",
+                     "production_unit": "days",
+                     "setup_charge": "50.000(V)",
+                     "additional_location_charge": "",
+                     "additional_color_charge": "",
+                     "rush_charge": "",
+                     "ltm_charge": "75.000(V)",
+                     "pms_charge": "",
+                     "type_of_charge": "",
+                     "imprint_method": "Spectrum",
+                     "is_pms_color_allow": "0",
+                     "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+                     "imprint_data_range": []
+                  },
+                  {
+                     "_id": "65403b40-04ff-11e8-8c2a-2b3e49001dac",
+                     "product_id": "48891",
+                     "sku": "PB1572",
+                     "imprint_position": "Standard",
+                     "imprint_area": "3/8\" H x 1-1/4\" W",
+                     "matrix": "",
+                     "max_imprint_color_allowed": 0,
+                     "price_included": 0,
+                     "max_location_allowed": 1,
+                     "location_price_included": 1,
+                     "full_color": "1",
+                     "production_days": "3-5",
+                     "production_unit": "days",
+                     "setup_charge": "",
+                     "additional_location_charge": "",
+                     "additional_color_charge": "",
+                     "rush_charge": "",
+                     "ltm_charge": "",
+                     "pms_charge": "",
+                     "type_of_charge": "Run Charge",
+                     "imprint_method": "Spectrum",
+                     "is_pms_color_allow": "0",
+                     "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+                     "imprint_data_range": []
+                  }
+               ],
+               "images": [
+                  {
+                     "_id": "acef5de0-04ff-11e8-8c2a-2b3e49001dac",
+                     "product_id": "48891",
+                     "sku": "PB1572",
+                     "Web_image_3": "",
+                     "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+                     "images": [
+                        {
+                           "web_image": "pb1572-black.jpg",
+                           "color": "Black",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "pb1572-blue.jpg",
+                           "color": "Blue",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "pb1572-indigo-blue.jpg",
+                           "color": "Indigo Blue",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "pb1572-peacock-blue.jpg",
+                           "color": "Peacock Blue",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "pb1572-green.jpg",
+                           "color": "Green",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "pb1572-lime-green.jpg",
+                           "color": "Lime green",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "pb1572-olive-green.jpg",
+                           "color": "Olive Green",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "pb1572-orange.jpg",
+                           "color": "Orange",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "pb1572-pumpkin-orange.jpg",
+                           "color": "Orange Pumpkin",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "pb1572-bubblegum-pink.jpg",
+                           "color": "Bubblegum Pink",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "pb1572-purple.jpg",
+                           "color": "Purple",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "pb1572-lilac-purple.jpg",
+                           "color": "Lilac Purple",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "pb1572-red.jpg",
+                           "color": "Red",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "pb1572-dusty-rose.jpg",
+                           "color": "Red/Dusty Rose",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "pb1572-merlot.jpg",
+                           "color": "Red/Merlot",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "pb1572-silver.jpg",
+                           "color": "Silver",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "pb1572-daffodil-yellow.jpg",
+                           "color": "Daffodil Yellow",
+                           "image_color_code": ""
+                        }
+                     ]
+                  }
+               ],
+               "shipping": [
+                  {
+                     "_id": "c0c6dd70-04ff-11e8-8c2a-2b3e49001dac",
+                     "product_id": "",
+                     "sku": "PB1572",
+                     "free_on_board": "CA 91744 US",
+                     "fob_city": "La Puente",
+                     "fob_state_code": "CA",
+                     "fob_country_code": "US",
+                     "fob_zip_code": "91744",
+                     "shipping_qty_per_carton": 500,
+                     "carton_length": 20,
+                     "carton_width": "6",
+                     "carton_height": "8",
+                     "carton_weight": "16",
+                     "product_length": "5-1/2",
+                     "product_width": "1/2",
+                     "product_height": "",
+                     "product_weight": "0.04",
+                     "carton_size_unit": "inches",
+                     "carton_weight_unit": "LBS",
+                     "product_size_unit": "inches",
+                     "product_weight_unit": "LBS",
+                     "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+                     "shipping_range": []
+                  }
+               ],
+               "non-available_regions": [],
+               "attributes": {
+                  "colors": [
+                     "Mixed",
+                     "Black",
+                     "Blue",
+                     "Indigo Blue",
+                     "Peacock Blue",
+                     "Green",
+                     "Lime green",
+                     "Olive Green",
+                     "Orange",
+                     "Orange Pumpkin",
+                     "Bubblegum Pink",
+                     "Purple",
+                     "Lilac Purple",
+                     "Daffodil Yellow",
+                     "Red/Merlot",
+                     "Caribbean Blue",
+                     "Red/Dusty Rose",
+                     "Baby Pink",
+                     "Red",
+                     "Silver"
+                  ]
+               },
+               "features": [
+                  {
+                     "key": "Material",
+                     "value": "ABS&AS"
+                  },
+                  {
+                     "key": "Primary Imprint",
+                     "value": "Spectrum"
+                  }
+               ],
+               "activeSummary": "Mixed,Black,Blue,Indigo Blue,Peacock Blue,Green,Lime green,Olive Green,Orange,Orange Pumpkin,Bubblegum Pink,Purple,Lilac Purple,Daffodil Yellow,Red/Merlot,Caribbean Blue,Red/Dusty Rose,Baby Pink,Red,Silver,Material,ABS&AS,Primary Imprint,Spectrum",
+               "supplier_id": "5a5f234639cd270013d24c2b",
+               "supplier_info": {
+                  "company": "",
+                  "username": "5a5f234639cd270013d24c2b",
+                  "email": "sweda@flowz.com"
+               },
+               "vid": [
+                  "sup5a5f234639cd270013d24c2b-1"
+               ]
+            },
+         
+	{
+            "index": {
+		    "_type": "product",
+		    "_id": "b7f33b70-0500-11e8-bc32-29a84e6ebccd"
+	    }
+         },
+	{
+               "product_id": "1298686",
+               "sku": "UM7103",
+               "country": "US",
+               "available_currencies": [
+                  "USD",
+                  "CAD",
+                  "AUD"
+               ],
+               "available_regions": [],
+               "nonavailable_regions": "US,CA,AU",
+               "price_1": 0.95,
+               "default_color": "Mixed",
+               "attr_imprint_color": "",
+               "attr_shape": "",
+               "attr_decimal": "",
+               "language": "en",
+               "currency": "USD",
+               "product_name": "Stratus Reversible Umbrella",
+               "description": "<p><span style=\"color: #232528; font-family: 'Open Sans', 'Segoe UI', 'lucida grande', arial, verdana, 'lucida sans unicode', tahoma, sans-serif; font-size: 14px;\">The Stratus Reversible Umbrella is the umbrella you've been waiting for! Reverse open/close technology ensures that your wet umbrella will drip AWAY from your car, your floors, and YOU! Double layer 190TPG polyester fabric with perforated liner and resilient fiberglass frame designed to stand up to the strongest winds. Rubber-coated C-shaped handle for easy carrying and hands-free capability. Self standing for easy drying!&nbsp;48\" arc size (when open).</span></p>",
+               "linename": "Sweda",
+               "categories": [
+                  "Umbrellas"
+               ],
+               "search_keyword": [
+                  "Umbrella",
+                  "reversible umbrella",
+                  "hands free umbrella",
+                  "stratus",
+                  "best umbrella",
+                  "um7103"
+               ],
+               "default_image": "87/um7103-mixed_5.jpg",
+               "default_image_color_code": "",
+               "valid_up_to": "2025-12-31",
+               "matrix_price": "",
+               "matrix_frieght": "",
+               "vat": "",
+               "vat_unit": "",
+               "packaging_type": "",
+               "packaging_charges": "",
+               "packaging_code": "",
+               "video_url": "https://youtu.be/MT3Z-qkhiJ8",
+               "distributor_central_url": "",
+               "special_price_valid_up_to": "2025-12-31",
+               "private": "",
+               "supplier": "",
+               "company": "",
+               "username": "sweda@flowz.com",
+               "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+               "min_price": 19.99,
+               "max_price": 16.99,
+               "pricing": [
+                  {
+                     "_id": "469a5090-04ff-11e8-8c2a-2b3e49001dac",
+                     "product_id": "1298686",
+                     "sku": "UM7103",
+                     "price_type": "regular",
+                     "type": "decorative",
+                     "global_price_type": "global",
+                     "currency": "USD",
+                     "price_unit": "inche",
+                     "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+                     "price_range": [
+                        {
+                           "qty": {
+                              "gte": 50,
+                              "lte": 249
+                           },
+                           "price": 19.99,
+                           "code": "R"
+                        },
+                        {
+                           "qty": {
+                              "gte": 250,
+                              "lte": 499
+                           },
+                           "price": 18.99,
+                           "code": "R"
+                        },
+                        {
+                           "qty": {
+                              "gte": 500,
+                              "lte": 999
+                           },
+                           "price": 17.99,
+                           "code": "R"
+                        },
+                        {
+                           "qty": {
+                              "gte": 1000,
+                              "lte": 2499
+                           },
+                           "price": 17.49,
+                           "code": "R"
+                        },
+                        {
+                           "qty": {
+                              "gte": 2500
+                           },
+                           "price": 16.99,
+                           "code": "R"
+                        }
+                     ]
+                  }
+               ],
+               "imprint_data": [
+                  {
+                     "_id": "6163c460-04ff-11e8-8c2a-2b3e49001dac",
+                     "product_id": "1298686",
+                     "sku": "UM7103",
+                     "imprint_position": "Standard - Two Panels",
+                     "imprint_area": "5\" W x 5\" H",
+                     "matrix": "",
+                     "max_imprint_color_allowed": 4,
+                     "price_included": 1,
+                     "max_location_allowed": 4,
+                     "location_price_included": 2,
+                     "full_color": "0",
+                     "production_days": "5-7",
+                     "production_unit": "days",
+                     "setup_charge": "50.000(V)",
+                     "additional_location_charge": "",
+                     "additional_color_charge": "",
+                     "rush_charge": "",
+                     "ltm_charge": "75.000(V)",
+                     "pms_charge": "",
+                     "type_of_charge": "",
+                     "imprint_method": "Heat Transfer",
+                     "is_pms_color_allow": "0",
+                     "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+                     "imprint_data_range": []
+                  }
+               ],
+               "images": [
+                  {
+                     "_id": "a709a980-04ff-11e8-8c2a-2b3e49001dac",
+                     "product_id": "1298686",
+                     "sku": "UM7103",
+                     "Web_image_3": "",
+                     "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+                     "images": [
+                        {
+                           "web_image": "um7103-black-black.jpg",
+                           "color": "Black/Black",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "um7103-blue-black.jpg",
+                           "color": "Blue/Black",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "um7103-orange-black.jpg",
+                           "color": "Orange/Black",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "um7103-red-black.jpg",
+                           "color": "Red/Black",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "um7103-mixed_3.jpg",
+                           "color": "Mixed",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "um7103-mixed_4.jpg",
+                           "color": "Mixed",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "um7103-mixed_6.jpg",
+                           "color": "Mixed",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "um7103-mixed_7.jpg",
+                           "color": "Mixed",
+                           "image_color_code": ""
+                        }
+                     ]
+                  }
+               ],
+               "shipping": [
+                  {
+                     "_id": "bfcdd770-04ff-11e8-8c2a-2b3e49001dac",
+                     "product_id": "",
+                     "sku": "UM7103",
+                     "free_on_board": "CA 91744 US",
+                     "fob_city": "La Puente",
+                     "fob_state_code": "CA",
+                     "fob_country_code": "US",
+                     "fob_zip_code": "91744",
+                     "shipping_qty_per_carton": 20,
+                     "carton_length": 10,
+                     "carton_width": "9",
+                     "carton_height": "31",
+                     "carton_weight": "27",
+                     "product_length": "50",
+                     "product_width": "",
+                     "product_height": "",
+                     "product_weight": "",
+                     "carton_size_unit": "inches",
+                     "carton_weight_unit": "LBS",
+                     "product_size_unit": "inches",
+                     "product_weight_unit": "LBS",
+                     "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+                     "shipping_range": []
+                  }
+               ],
+               "non-available_regions": [],
+               "attributes": {
+                  "colors": [
+                     "Black/Black",
+                     "Blue/Black",
+                     "Green/Black",
+                     "Orange/Black",
+                     "Red/Black",
+                     "Mixed"
+                  ]
+               },
+               "features": [
+                  {
+                     "key": "Primary Imprint",
+                     "value": "Heat Transfer"
+                  },
+                  {
+                     "key": "Arc Size",
+                     "value": "48\" (when open)"
+                  }
+               ],
+               "activeSummary": "Black/Black,Blue/Black,Green/Black,Orange/Black,Red/Black,Mixed,Primary Imprint,Heat Transfer,Arc Size,48\" (when open)",
+               "supplier_id": "5a5f234639cd270013d24c2b",
+               "supplier_info": {
+                  "company": "",
+                  "username": "5a5f234639cd270013d24c2b",
+                  "email": "sweda@flowz.com"
+               },
+               "vid": [
+                  "sup5a5f234639cd270013d24c2b-1"
+               ]
+            }
+         },
+         {
+            "index": {
+             	"_id": "b800a8f0-0500-11e8-bc32-29a84e6ebccd"
+            }
+         }, 
+	{
+               "product_id": "1284466",
+               "sku": "GFT4820",
+               "country": "US",
+               "available_currencies": [
+                  "USD",
+                  "CAD",
+                  "AUD"
+               ],
+               "available_regions": [
+                  "US",
+                  "AU"
+               ],
+               "nonavailable_regions": "CA",
+               "price_1": 4.5,
+               "default_color": "Mixed",
+               "attr_imprint_color": "",
+               "attr_shape": "",
+               "attr_decimal": "",
+               "language": "en",
+               "currency": "USD",
+               "product_name": "Leatherette Tumbler/ Vacuum Bottle Set",
+               "description": "<p>Three piece gift set with stainless steel tumbler in PVC sleeve (MG2020) and double wall stainless thermos bottle in PVC sleeve (ST4848). Includes vegan leather zipper carrying case. **DEBOSSING ON MG2020 WILL INCREASE PRODUCTION TIME TO 15-20 WORKING DAYS.</p>",
+               "linename": "Sweda",
+               "categories": [
+                  "Gift Sets",
+                  "WATER BOTTLES",
+                  "TUMBLERS"
+               ],
+               "search_keyword": [
+                  "GFT4820",
+                  "LEATHERETTE TUMBLER/VACUUM BOTTLE SET",
+                  "GIFTS",
+                  "DRINKWARE",
+                  "TUMBLERS",
+                  "VACUUM BOTTLES"
+               ],
+               "default_image": "87/GFT4820-all-1000x.jpg",
+               "default_image_color_code": "",
+               "valid_up_to": "2025-12-31",
+               "matrix_price": "",
+               "matrix_frieght": "",
+               "vat": "",
+               "vat_unit": "",
+               "packaging_type": "",
+               "packaging_charges": "",
+               "packaging_code": "",
+               "video_url": "",
+               "distributor_central_url": "",
+               "special_price_valid_up_to": "1999-11-30",
+               "private": "",
+               "supplier": "",
+               "company": "",
+               "username": "sweda@flowz.com",
+               "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+               "min_price": 29.99,
+               "max_price": 24.99,
+               "pricing": [
+                  {
+                     "_id": "472ca580-04ff-11e8-8c2a-2b3e49001dac",
+                     "product_id": "1284466",
+                     "sku": "GFT4820",
+                     "price_type": "regular",
+                     "type": "decorative",
+                     "global_price_type": "global",
+                     "currency": "USD",
+                     "price_unit": "inche",
+                     "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+                     "price_range": [
+                        {
+                           "qty": {
+                              "gte": 25,
+                              "lte": 49
+                           },
+                           "price": 29.99,
+                           "code": "R"
+                        },
+                        {
+                           "qty": {
+                              "gte": 50,
+                              "lte": 249
+                           },
+                           "price": 27.99,
+                           "code": "R"
+                        },
+                        {
+                           "qty": {
+                              "gte": 250,
+                              "lte": 999
+                           },
+                           "price": 25.99,
+                           "code": "R"
+                        },
+                        {
+                           "qty": {
+                              "gte": 1000
+                           },
+                           "price": 24.99,
+                           "code": "R"
+                        }
+                     ]
+                  }
+               ],
+               "images": [
+                  {
+                     "_id": "a8bb0300-04ff-11e8-8c2a-2b3e49001dac",
+                     "product_id": "1284466",
+                     "sku": "GFT4820",
+                     "Web_image_3": "",
+                     "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+                     "images": [
+                        {
+                           "web_image": "GFT4820-grp-BK-1000x.jpg",
+                           "color": "Black",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "GFT4820-grp-BL-1000x.jpg",
+                           "color": "Blue",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "GFT4820-grp-BR-1000x.jpg",
+                           "color": "Brown",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "GFT4820-grp-GN-1000x.jpg",
+                           "color": "Green",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "GFT4820-grp-OR-1000x.jpg",
+                           "color": "Orange",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "GFT4820-grp-PK-1000x.jpg",
+                           "color": "Pink",
+                           "image_color_code": ""
+                        },
+                        {
+                           "web_image": "GFT4820-grp-BU-1000x.jpg",
+                           "color": "Burgundy",
+                           "image_color_code": ""
+                        }
+                     ]
+                  }
+               ],
+               "shipping": [
+                  {
+                     "_id": "c00bf1e0-04ff-11e8-8c2a-2b3e49001dac",
+                     "product_id": "",
+                     "sku": "GFT4820",
+                     "free_on_board": "CA 91744 US",
+                     "fob_city": "La Puente",
+                     "fob_state_code": "CA",
+                     "fob_country_code": "US",
+                     "fob_zip_code": "91744",
+                     "shipping_qty_per_carton": 20,
+                     "carton_length": 30,
+                     "carton_width": "24",
+                     "carton_height": "12",
+                     "carton_weight": "46",
+                     "product_length": "",
+                     "product_width": "",
+                     "product_height": "",
+                     "product_weight": "",
+                     "carton_size_unit": "inches",
+                     "carton_weight_unit": "LBS",
+                     "product_size_unit": "inches",
+                     "product_weight_unit": "LBS",
+                     "import-tracker_id": "252c098a-b044-4e18-b5bc-5deb59b6303b",
+                     "shipping_range": []
+                  }
+               ],
+               "non-available_regions": [],
+               "attributes": {
+                  "colors": [
+                     "Mixed",
+                     "Black",
+                     "Blue",
+                     "Navy Blue",
+                     "Brown",
+                     "Green",
+                     "Orange",
+                     "Pink",
+                     "Burgundy"
+                  ]
+               },
+               "features": [
+                  {
+                     "key": "Primary Imprint",
+                     "value": "N/A"
+                  }
+               ],
+               "activeSummary": "Mixed,Black,Blue,Navy Blue,Brown,Green,Orange,Pink,Burgundy,Primary Imprint,N/A",
+               "supplier_id": "5a5f234639cd270013d24c2b",
+               "supplier_info": {
+                  "company": "",
+                  "username": "5a5f234639cd270013d24c2b",
+                  "email": "sweda@flowz.com"
+               },
+               "vid": [
+                  "sup5a5f234639cd270013d24c2b-1"
+               ]
+            }

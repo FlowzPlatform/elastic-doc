@@ -1,0 +1,43 @@
+{
+    "size": 0, 
+    "aggs": {
+    "fobID": {
+      "terms": {
+        "field":   "shipping.free_on_board"
+      },
+      "aggs": {
+                "fobCity": { 
+                    "terms": {
+                        "field":   "shipping.fob_city"
+                      },
+                      "aggs": {
+                         "fob_state_code": {
+                            "terms": {
+                                "field":"shipping.fob_state_code"
+                            },
+                            "aggs": {
+                                 "fob_zip_code": {
+                                    "terms": {
+                                        "field":"shipping.fob_zip_code"
+                                    },
+                                    "aggs": {
+                                       "fob_country_code": {
+                                            "terms": {
+                                                "field":"shipping.fob_country_code"
+                                            },
+                                            "aggs": {
+                                               "products": {
+                                                   "top_hits": { "_source": "sku", "size":10000 }
+                                               }
+                                            }
+                                       }
+                            }
+                                 }
+                            }
+                         }
+                      }
+                }  
+            }
+        }
+    }
+}

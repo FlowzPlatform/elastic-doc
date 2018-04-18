@@ -1,0 +1,20 @@
+GET products/product/_search?pretty
+{
+  "query": {
+	"bool" : {
+		"must_not" : {
+			"has_child": {
+				"type":       "dist_product",
+				"score_mode": "max",
+				"query": {
+					"match":{
+					  	"title": "Distributor Playful Plaid Picnic Blanket"
+					}
+			      }
+			}
+		}
+	}
+    }
+}
+
+

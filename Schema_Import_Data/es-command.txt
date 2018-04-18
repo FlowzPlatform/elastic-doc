@@ -1,0 +1,140 @@
+PUT pdm
+{
+  "mappings": {
+    "product": {},
+    "dist_product": {
+      "_parent": {
+        "type": "product" 
+      }
+    }
+  }
+}
+
+
+delete bicycle
+PUT bicycle
+{
+  "mappings": {
+    "product": {},
+    "dist_bicycle": {
+      "_parent": {
+        "type": "bicycle" 
+      }
+    }
+  }
+}
+PUT bicycle/_settings
+{
+  "index.mapping.total_fields.limit": 5000
+}
+
+POST /_xpack/security/role/read_write
+{
+  "indices": [
+    {
+      "names": [ "bicycle" ],
+      "privileges": [ "read","write" ],
+      "query" : {
+           "template" : {
+          "inline" : {
+            "match" : { "vid" : "{{_user.metadata.sid}}"}
+          }
+        } 
+      }
+    }
+  ]
+}
+
+POST /_xpack/security/user/aakron
+{
+  "password" : "123456",
+  "roles" : [ "read_write"],
+  "full_name" : "Aakron",
+  "email" : "aakron@example.com",
+  "metadata" : {
+	"id":5,
+	"company":"Aakron Line",
+  	"sid":"sup5-1",
+	"user_version_history":["sup5-1"]
+  },
+  "enabled": true
+}
+
+
+POST pdm/_delete_by_query
+{
+  "query": { 
+    "match_all": {
+      }
+  }
+}
+
+https://elastic:OHQ0CzscklU0ttV59JicgNyH@e128e59136400347637da727965922e5.us-east-1.aws.found.io:9243
+
+https://elastic:4t4AplzzRsGmarJ6txoSHJIX@9d89b0632a794a289b08f4de77dbf09a.us-east-1.aws.found.io:9243
+
+curl -u elastic -XPOST https://@9d89b0632a794a289b08f4de77dbf09a.us-east-1.aws.found.io:9243/pdm1/product/_bulk?pretty=true --data-binary @supplier5.json
+=============================================================================================================
+PUT bicycle
+{
+  "mappings": {
+    "bicycle": {},
+    "dist_bicycle": {
+      "_parent": {
+        "type": "bicycle" 
+      }
+    }
+  }
+}
+curl -u elastic -XPOST 172.16.230.239:9200/bicycle/bicycle/_bulk?pretty=true --data-binary @bicycle1.json
+=============================================================================================================
+PUT electronics
+{
+  "mappings": {
+    "electronics": {},
+    "dist_electronics": {
+      "_parent": {
+        "type": "electronics" 
+      }
+    }
+  }
+}
+curl -u elastic -XPOST 172.16.105.117:9200/electronics/electronics/_bulk?pretty=true --data-binary @electronics.json
+=============================================================================================================
+PUT furniture
+{
+  "mappings": {
+    "furniture": {},
+    "dist_furniture": {
+      "_parent": {
+        "type": "furniture" 
+      }
+    }
+  }
+}
+curl -u elastic -XPOST 172.16.105.117:9200/furniture/furniture/_bulk?pretty=true --data-binary @furniture.json
+=============================================================================================================
+PUT food
+{
+  "mappings": {
+    "food": {},
+    "dist_food": {
+      "_parent": {
+        "type": "food" 
+      }
+    }
+  }
+}
+	curl -u elastic -XPOST 172.16.105.117:9200/food/food/_bulk?pretty=true --data-binary @food1.json
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+

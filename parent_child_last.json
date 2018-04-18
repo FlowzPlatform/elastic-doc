@@ -1,0 +1,121 @@
+GET products/dist_product/_search
+{
+  "query":
+  {
+    "bool":
+    {
+      "should": [
+          {
+                "bool":
+                {
+                  "must":
+                  [
+                    {
+                      "has_child":
+            		    	{
+                  				"type": "product",
+                  				"query":
+                  				{
+                  					"match": 
+                  					{
+                  						"title": "Playful"
+                  			      		}
+                  				}
+                  		}
+                    }
+                    
+                  ],
+                  "must_not":{
+                    "exists":
+                    {
+                      "field": "title"
+                    }
+                  }
+                }
+              
+          },
+          {"bool":
+           {
+              "must": [
+                {
+                  "exists":
+                  {
+                    "field": "title"
+                  }
+                },
+                {
+                  "match_phrase" :
+                  {
+                    "title": "Playful"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+}
+=======================================================================================
+
+
+GET products/product/_search
+GET products/dist_product/_search
+{
+  "query":
+  {
+    "bool":
+    {
+      "should": [
+          {
+                "bool":
+                {
+                  "must":
+                  [
+                    {
+                      "has_parent":
+            		    	{
+                  				"type": "product",
+                  				"query":
+                  				{
+                  					"match": 
+                  					{
+                  						"sku_number": "MP3555"
+                  			      		}
+                  				}
+                  		}
+                    }
+                    
+                  ],
+                  "must_not":{
+                    "exists":
+                    {
+                      "field": "sku_number"
+                    }
+                  }
+                }
+              
+          },
+          {"bool":
+           {
+              "must": [
+                {
+                  "exists":
+                  {
+                    "field": "sku_number"
+                  }
+                },
+                {
+                  "match_phrase" :
+                  {
+                    "sku_number": "MP3555"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+}
+

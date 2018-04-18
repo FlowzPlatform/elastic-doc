@@ -1,0 +1,244 @@
+https://www.elastic.co/guide/en/elasticsearch/guide/current/combining-filters.html
+
+
+
+GET products/product/_search
+GET products/dist_product/_search
+GET products/_search
+{
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "bool": {
+            "must": [
+              {
+                "has_child": {
+                  "type": "dist_product",
+                  "query": {
+                    "match": {
+                      "title": "Playful"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "bool": {
+            "must": [
+              {
+                "match": 
+                {
+                  "title": "Playful"
+                }
+              }
+            ],
+            "must_not": [
+              {
+                "has_child": {
+                  "type": "dist_product",
+                  "query": {
+                    "exists":
+                    {
+                      "field": "title"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+GET products/_search
+{
+  "query":
+  {
+    "bool":
+    {
+      "should": [
+          {
+                "bool":
+                {
+                  "must_not":
+                  [
+                    {
+                      "has_child":
+            		    	{
+                  				"type": "dist_product",
+                  				"query":
+                  				{
+                  				  "exists":
+                            {
+                              "field": "title"
+                            }
+                  				}
+                  		}
+                    }
+                    
+                  ],
+                  "must":{
+                    "match": 
+          					{
+      						      "title": "Playful"
+      			      	}
+                  }
+                }
+          },
+          {"bool":
+           {
+              "must": [
+                {
+                  "has_child": {
+                    "type": "dist_product",
+                    "query": {
+                      "match" :
+                      {
+                        "title": "Playful"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+}
+
+GET products/_search
+{
+  "query":
+  {
+    "bool":
+    {
+      "should": [
+          {"bool":
+           {
+              "must": [
+                {
+                  "has_child": {
+                    "inner_hits":{},
+                    "type": "dist_product",
+                    "query": {
+                      "bool": {
+                        "must": [
+                          {
+                            "exists":
+                            {
+                              "field": "title"
+                            }
+                          }
+                        ],
+                        "filter" :
+                        {
+                          "term" : {"title": "Distributor"}
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+                "bool":
+                {
+                  "must":
+                  [
+                    {
+                      "has_child":
+            		    	{
+                  				"type": "dist_product",
+                  				"query":
+                  				{
+                  				  "bool": {
+                  				    "must_not": [
+                  				      {
+                  				        "exists":
+                                  {
+                                    "field": "title"
+                                  }
+                  				      }
+                  				    ]
+                  				  } 
+                  				  
+                  				}
+                  		}
+                    }
+                  ],
+                  "should":{
+                    "match": 
+          					{
+      						      "title": "Distributor"
+      			      	}
+                  }
+                }
+          }
+        ]
+      }
+    }
+}
+GET products/_search
+{
+  "query":
+  {
+    "bool":
+    {
+      "should": [
+          {"bool":
+           {
+              "must": [
+                {
+                  "has_child": {
+                    "inner_hits":{},
+                    "type": "dist_product",
+                    "query": {
+                      "bool": {
+                        "must": [
+                          {
+                            "exists":
+                            {
+                              "field": "title"
+                            }
+                          },
+                          {
+                            "match": {
+                              "title": "Playful"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+}
+
+GET products/_search
+{
+  "query":
+  {
+    "bool":
+    {
+      "must": [
+          {
+            "match" : { "title" : "Playful" }
+          },
+          {
+            "match" : { "_type" : "product" }
+          }
+        ]
+      }
+    }
+}

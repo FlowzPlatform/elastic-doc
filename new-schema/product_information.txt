@@ -1,0 +1,620 @@
+{
+    supplier_id: {
+        type: String,
+        label: "Supplier Id",
+        optional: false
+    },
+    sku: {
+        type: String,
+        label: "SKU",
+        optional: false
+    },
+    country: {
+        type: String,
+        label: "Country",
+        allowedValues: ['US', 'CA', 'AU'],
+        optional: false
+    },
+    language: {
+        type: String,
+        label: "Language",
+        allowedValues: ['en', 'fr'],
+        optional: false
+    },
+    currency: {
+        type: String,
+        label: "Currency",
+        allowedValues: ['USD', 'CAD'],
+        optional: false
+    },
+    product_name: {
+        type: String,
+        label: "Product Name",
+        optional: false
+    },
+    description: {
+        type: String,
+        label: "Description",
+        optional: false
+    },
+    linename: {
+        type: [String],
+        label: "Linename"
+    },
+    categories: {
+        type: [String],
+        label: "Categories",
+        optional: false
+    },
+    search_keyword: {
+        type: [String],
+        label: "Search Keyword",
+        optional: false
+    },
+    default_image: {
+        type: String,
+        label: "Default Image",
+        optional: false
+    },
+    default_image_color_code: {
+        type: String,
+        label: "Default Image Color Code",
+        optional: true
+    },
+    valid_up_to: {
+        type: Date,
+        label: "Valid Up To",
+        optional: true
+    },
+    matrix_price: {
+        type: String,
+        label: "Matrix Price",
+        optional: true
+    },
+    matrix_frieght: {
+        type: String,
+        label: "Matrix Frieght",
+        optional: true
+    },
+    vat: {
+        type: String,
+        label: "Vat",
+        optional: true
+    },
+    vat_unit: {
+        type: String,
+        label: "vat unit",
+        optional: true
+    },
+    packaging_type: {
+        type: String,
+        label: "Packaging Type",
+        optional: true
+    },
+    packaging_charges: {
+        type: String,
+        label: "Packaging Charges",
+        optional: true
+    },
+    packaging_code: {
+        type: String,
+        label: "Packaging Code",
+        optional: true
+    },
+    video_url: {
+        type: String,
+        label: "Video URL",
+        regEx: SimpleSchema.RegEx.Url,
+        optional: true
+    },
+    distributor_central_url: {
+        type: String,
+        label: "Distributor Central URL",
+        regEx: SimpleSchema.RegEx.Url,
+        optional: true
+    },
+    special_price_valid_up_to: {
+        type: Date,
+        label: "Special Price Valid Up To",
+        optional: true
+    },    
+    shipping : {
+	type : [Object],
+	label: "Product Shipping",
+        optional: true
+    },
+    images : {
+    	type : [Object],
+	label: "Product Images",
+        optional: true
+    },
+    additional_charge : {
+    	type : [Object],
+	label: "Product Additional Charge",
+        optional: true
+    },
+    imprint_data : {
+    	type : [Object],
+	label: "Product imprint data",
+        optional: true
+    },
+    pricing : {
+    	type : [Object],
+	label: "Product price",
+        optional: true
+    },
+    attributes : {
+    	type : [Object],
+	label: "Product Attributes",
+        optional: true
+    },
+    feature : {
+    	type : [Object],
+	label: "Product Features",
+        optional: true
+    },
+    supplierInfo : {
+    	type : Object,
+	label: "Supplier Information",
+        optional: true
+    },
+}
+
+
+
+Product supplierInfo 
+=======================================================
+{
+    name: {
+        type: String,
+        label: "Supplier name"
+    },
+    CompanyName: {
+        type: String,
+        label: "Company Name"
+    }
+}
+=======================================================
+
+
+Product features 
+=======================================================
+{
+    name: {
+        type: String,
+        label: "Feature name"
+    },
+    value: {
+        type: String,
+        label: "Feature value"
+    }
+}
+=======================================================
+
+Product attributes 
+=======================================================
+{
+    type: {
+        type: String,
+        label: "Attribute Type",
+        allowedValues: ['Colors', 'style', 'size','imprint_method']
+    },
+    value: {
+        type: String,
+        label: "Attribute Type",
+        allowedValues: ['Colors', 'style', 'size']
+    },
+    code: {
+        type: String,
+        label: "Attribute Type",
+        allowedValues: ['Colors', 'style', 'size']
+    },
+    swatch_info: {
+	type: [Object],
+        label: "Swatch info"
+    }
+}
+=======================================================
+Product swatch_info 
+=======================================================
+{
+    image: {
+	type: String,
+	label: "Swatch URL",
+	regEx: SimpleSchema.RegEx.Url,
+	optional: true
+    },
+    colors: {
+	type: [String],
+	label: "Swatch Colors",
+	optional: true
+    },
+    colorCode: {
+	type: String,
+	label: "Swatch Color Code",
+	optional: true
+    },
+    PrimaryColor: {
+	type: String,
+	label: "Primary Color",
+	optional: true
+    },
+}
+=======================================================
+
+
+Product price 
+=======================================================
+{
+    price_type: {
+        type: String,
+        label: "Price Type",
+        allowedValues: ['regular', 'piece_wise_price', 'call_for_price']
+    },
+    type: {
+        type: String,
+        label: "Type",
+        allowedValues: ['decorative', 'blank', 'special', 'special_blank'],
+    },
+    global_price_type: {
+        type: String,
+        label: "Global Price Type",
+        allowedValues: ['global', 'above_catalog', 'oversease']
+    },
+    price_unit: {
+        type: String,
+        label: "Price Unit",
+        allowedValues: ['box', 'dozen', 'each', 'pack', 'pair', 'set']
+    },
+    qty_1_min: {
+        type: Number,
+        label: "Qty1 Min"
+    },
+    qty_1_max: {
+        type: Number,
+        label: "Qty1 Max"
+    },
+    price_1: {
+        type: Number,
+        label: "Price1"
+    },
+    code_1: {
+        type: String,
+        label: "Code1"
+    },
+    
+    qty_2_min: {
+        type: Number,
+        label: "Qty2 Min",
+        optional: true
+    },
+    qty_2_max: {
+        type: Number,
+        label: "Qty2 Max",
+        optional: true
+    },
+    price_2: {
+        type: Number,
+        label: "Price2",
+        optional: true
+    },
+    code_2: {
+        type: String,
+        label: "Code2",
+        optional: true
+    },
+}
+=======================================================
+
+Product variation
+=======================================================
+    variation_label: {
+        type: String,
+        label: "Variation Label"
+    },
+    type: {
+        type: String,
+        label: "Type",
+        allowedValues: ['decorative', 'blank', 'special', 'special_blank'],
+        //msg : "Language type not allow this value"
+    },
+    global_price_type: {
+        type: String,
+        label: "Global Price Type",
+        allowedValues: ['global', 'above_catalog', 'oversease']
+    },
+    price_unit: {
+        type: String,
+        label: "Price Unit",
+        allowedValues: ['box', 'dozen', 'each', 'pack', 'pair', 'set']
+    },
+    attr_color: {
+        type: String,
+        label: "Attribute Color"
+    },
+    attr_size: {
+        type: String,
+        label: "Attribute Size"
+    },
+    attr_style: {
+        type: String,
+        label: "Attribute Style"
+    },
+
+    qty_1_min: {
+        type: Number,
+        label: "Qty1 Min"
+    },
+    qty_1_max: {
+        type: Number,
+        label: "Qty1 Max"
+    },
+    price_1: {
+        type: Number,
+        label: "Price1",
+        max: 200
+    },
+    code_1: {
+        type: String,
+        label: "Code1"
+    }
+=======================================================
+
+
+
+
+
+=======================================================
+Product imprint_data 
+=======================================================
+{
+    imprint_method: {
+	type: String,
+	label: "Imprint Method"
+    },
+    imprint_position: {
+	type: String,
+	label: "Imprint Position"
+    },
+    imprint_area: {
+        type: String,
+        label: "Imprint Area",
+    },
+    matrix: {
+        type: String,
+        label: "Matrix"
+    },
+    max_imprint_color_allowed: {
+        type: Number,
+        label: "Max Imprint Color allowed"
+    },
+    price_included: {
+        type: Number,
+        label: "Price Included"
+    },
+    max_location_allowed: {
+        type: Number,
+        label: "Max Location allowed"
+    },
+    location_price_included: {
+        type: Number,
+        label: "Location Price Included",
+        max: 200
+    },
+    full_color: {
+        type: String,
+        label: "Full Color"
+    },
+    production_days: {
+        type: String,
+        label: "Production Days"
+    },
+    production_unit: {
+        type: Number,
+        label: "Production unit"
+    },
+    setup_charge: {
+        type: Number,
+        label: "Setup Charge"
+    },
+    additional_location_charge: {
+        type: Number,
+        label: "Additional Location Charge"
+    },
+
+    additional_color_charge: {
+        type: Number,
+        label: "Additional Color Charge"
+    },
+    rush_charge: {
+        type: Number,
+        label: "Rush Charge"
+    },
+    ltm_charge: {
+        type: Number,
+        label: "LTM Charge",
+        max: 200
+    },
+    pms_charge: {
+        type: Number,
+        label: "PMS Charge"
+    },
+
+    qty_1_min: {
+        type: Number,
+        label: "Qty_1_Min"
+    },
+    qty_1_max: {
+        type: Number,
+        label: "Qty_1_Max"
+    },
+    price_1: {
+        type: Number,
+        label: "Price_1",
+        max: 200
+    },
+    code_1: {
+        type: Number,
+        label: "Code_1"
+    },
+
+    qty_2_min: {
+        type: Number,
+        label: "Qty_1_Min"
+    },
+    qty_2_max: {
+        type: Number,
+        label: "Qty_1_Max"
+    },
+    price_2: {
+        type: Number,
+        label: "Price_1",
+        max: 200
+    },
+    code_2: {
+        type: Number,
+        label: "Code_1"
+    }
+}
+=======================================================
+
+Product additional_charge 
+=======================================================
+{
+	charge_name: {
+	  type: String,
+	  label: "Charge Name",
+	},
+	option_name: {
+	  type: String,
+	  label: "Option Name"
+	},
+	moq: {
+	  type: String,
+	  label: "MOQ",
+	},
+	qty_min: {
+	  type: Number,
+	  label: "Qty Min"
+	},
+	qty_max: {
+	  type: Number,
+	  label: "Qty Max"
+	},
+	price: {
+	  type: Number,
+	  label: "Price"
+	},
+	code: {
+	  type: String,
+	  label: "Code"
+	},
+	Net_Price: {
+	  type: Number,
+	  label: "Net Price"
+	}
+}
+=======================================================
+
+Product Image object 
+=======================================================
+{
+    color: {
+	type: String,
+	label: "Color"
+    },
+    web_image: {
+        type: String,
+	regEx: SimpleSchema.RegEx.Url,
+        label: "Web Image"
+    },
+}
+=======================================================
+
+shipping object 
+=======================================================
+{
+    fob_city: {
+	type: String,
+	label: "Free On Board City"
+    },
+    fob_state_code: {
+	type: String,
+	label: "Free On Board State Code"
+    },
+    fob_country_code: {
+	type: String,
+	label: "Free On Board Country Code"
+    },
+    fob_zip_code: {
+	type: String,
+	label: "Free On Board zipcode"
+    },
+    shipping_qty_per_carton: {
+	type: Number,
+	label: "Shipping Qty Per Carton"
+    },
+    carton_length: {
+	type: Number,
+	label: "Carton Length"
+    },
+    carton_width: {
+	type: Number,
+	label: "Carton Width"
+    },
+    carton_height: {
+	type: Number,
+	label: "Carton Height"
+    },
+    carton_weight: {
+	type: Number,
+	label: "Carton Weight"
+    },
+    product_length: {
+	type: Number,
+	label: "Product Length"
+    },
+    product_width: {
+	type: Number,
+	label: "Product Width",
+	max: 200
+    },
+    product_height: {
+	type: Number,
+	label: "Product Height"
+    },
+    product_weight: {
+	type: Number,
+	label: "Product Weight"
+    },
+    carton_size_unit: {
+	type: Number,
+	label: "Carton Size Unit"
+    },
+    carton_weight_unit: {
+	type: Number,
+	label: "Carton Weight Unit",
+	max: 200
+    },
+    product_size_unit: {
+	type: Number,
+	label: "Product Size Unit"
+    },
+    product_weight_unit: {
+	type: Number,
+	label: "Product Weight Unit"
+    },
+    attr_color: {
+	type: String,
+	label: "Attribute Color"
+    },
+    attr_size: {
+	type: String,
+	label: "Attribute Size"
+    },
+    attr_style: {
+	type: String,
+	label: "Attribute Style"
+    }
+}
+=======================================================
